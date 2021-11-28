@@ -15,6 +15,12 @@ public class FirstTests {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com/");
+
+        // Get current URL
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println(currentUrl);
+
+        // Almost the same as get() but with different options
         //driver.navigate().to("http://google.com/");
 
         /**
