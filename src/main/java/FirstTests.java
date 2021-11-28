@@ -32,7 +32,7 @@ public class FirstTests {
         //System.out.println(pageS);
 
 
-        // Almost the same as get() but with different options
+        // Almost the same as driver.get()
         //driver.navigate().to("http://google.com/");
 
         /**
@@ -59,5 +59,11 @@ public class FirstTests {
         searchBox.submit();
         driver.quit(); // close all tabs and quite driver
         //driver.close(); // close last tab only, in case there was only one tab - close driver as well
+
+        // Actions: Navigate
+//        driver.navigate().to("");
+//        driver.navigate().forward();
+//        driver.navigate().back();
+//        driver.navigate().refresh();
     }
 }
