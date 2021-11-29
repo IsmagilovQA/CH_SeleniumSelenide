@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class FirstTests {
+public class TitleSourceSwitchToNavigate {
 
     @Test
     public void googleTest() {
