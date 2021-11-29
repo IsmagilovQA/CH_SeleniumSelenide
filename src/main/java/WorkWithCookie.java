@@ -33,7 +33,7 @@ public class WorkWithCookie {
 
         // Delete all cookies
         //driver.manage().deleteAllCookies();
-        
+
         //driver.quit();
     }
 }
