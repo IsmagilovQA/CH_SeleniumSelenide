@@ -17,23 +17,23 @@ public class FirstTests {
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com/");
 
-        // Get current URL + assertion
-        //String currentUrl = driver.getCurrentUrl();
-        //System.out.println(currentUrl);
-        //Assert.assertEquals(currentUrl, "https://www.google.com/?gws_rd=ssl");
+        //Get current URL + assertion
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println(currentUrl);
+        Assert.assertEquals(currentUrl, "https://www.google.com/?gws_rd=ssl");
 
-        // Get current title + assertion
-        //String title = driver.getTitle();
-        //System.out.println(title);
-        //Assert.assertEquals(title, "Google");
+        //Get current title + assertion
+        String title = driver.getTitle();
+        System.out.println(title);
+        Assert.assertEquals(title, "Google");
 
-        // Get page source
-        //String pageS = driver.getPageSource();
-        //System.out.println(pageS);
+        //Get page source
+        String pageS = driver.getPageSource();
+        System.out.println(pageS);
 
 
-        // Almost the same as driver.get()
-        //driver.navigate().to("http://google.com/");
+        //Almost the same as driver.get()
+        driver.navigate().to("http://google.com/");
 
         /**
          * Switching between window tabs:
@@ -58,12 +58,12 @@ public class FirstTests {
         searchBox.sendKeys("ChromeDriver");
         searchBox.submit();
         driver.quit(); // close all tabs and quite driver
-        //driver.close(); // close last tab only, in case there was only one tab - close driver as well
+        driver.close(); // close last tab only, in case there was only one tab - close driver as well
 
         // Actions: Navigate
-//        driver.navigate().to("");
-//        driver.navigate().forward();
-//        driver.navigate().back();
-//        driver.navigate().refresh();
+        driver.navigate().to("");
+        driver.navigate().forward();
+        driver.navigate().back();
+        driver.navigate().refresh();
     }
 }
