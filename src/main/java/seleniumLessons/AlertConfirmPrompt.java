@@ -1,3 +1,5 @@
+package seleniumLessons;
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
