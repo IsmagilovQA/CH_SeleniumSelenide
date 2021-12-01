@@ -12,6 +12,7 @@ public class MobilePhoneReplenishmentPage extends BasePage {
 
     private final By walletBtn = By.xpath("//div[@data-qa-node='debitSourceSource']");
 
+
     public MobilePhoneReplenishmentPage selectCardFromWallet() {
         driver.findElement(walletBtn).click();
         return this;
