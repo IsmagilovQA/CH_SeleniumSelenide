@@ -14,8 +14,8 @@ public class Constant {
 
     public static class BankCardTestData {
         public static final String MOBILE_PAYMENT_CARD = "4506909324274797",
-                                MOBILE_PAYMENT_CARD_EXP_DATE = "06/2022",
+                                MOBILE_PAYMENT_CARD_EXP_DATE = "06/22",
                                 MOBILE_PAYMENT_CVV = "327",
-                                MOBILE_PAYMENT_PHONE_NUMBER = "683322111";
+                                MOBILE_PAYMENT_PHONE_NUMBER = "686979712";
     }
 }

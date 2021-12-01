@@ -4,6 +4,7 @@ import common.CommonActions;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,6 +18,7 @@ import static common.Config.HOLD_BROWSER_OPEN;
 
 
 //@Execution(ExecutionMode.CONCURRENT) //  Looks it's not needed. All configs see in junit-platform.properties. Run in parallel -> uncomment this line.
+@ExtendWith(Listener.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();

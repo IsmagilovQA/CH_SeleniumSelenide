@@ -24,6 +24,7 @@ public class MobilePhoneReplenishmentTest extends BaseTest {
                 .typeCardNumber(MOBILE_PAYMENT_CARD)
                 .typeExpireDate(MOBILE_PAYMENT_CARD_EXP_DATE)
                 .typeCvvCode(MOBILE_PAYMENT_CVV)
-                .addToCart();
+                .addToCart()
+                .checkPaymentDetailsIsPresentInTheCart("Поповнення телефону. На номер +380686979712");
     }
 }

@@ -1,7 +1,9 @@
 package pages.telecomunications;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.base.BasePage;
 
 import javax.management.StringValueExp;
@@ -18,7 +20,8 @@ public class MobilePhoneReplenishmentPage extends BasePage {
                     cvvCodeInput = By.xpath("//input[@data-qa-node='cvvdebitSource']"),
                     amountInput = By.xpath("//input[@data-qa-node='amount']"),
                     addToCartBtn = By.xpath("//button[@data-qa-node='submit']"),
-                    phoneNumberInput = By.xpath("//input[@data-qa-node='phone-number']");
+                    phoneNumberInput = By.xpath("//input[@data-qa-node='phone-number']"),
+                    paymentDetails = By.xpath("//div[@data-qa-node='details']");
 
 
     /**
@@ -83,7 +86,19 @@ public class MobilePhoneReplenishmentPage extends BasePage {
     /**
      * Clicking Add to Cart button to submit
      */
-    public void addToCart() {
+    public MobilePhoneReplenishmentPage addToCart() {
         driver.findElement(addToCartBtn).click();
+        return this;
+    }
+
+    /**
+     * @param expectedText expected text
+     * @return
+     */
+    public MobilePhoneReplenishmentPage checkPaymentDetailsIsPresentInTheCart(String expectedText) {
+        waitElementIsVisible(driver.findElement(paymentDetails));
+        WebElement details = driver.findElement(paymentDetails);
+        Assertions.assertEquals(expectedText, details.getText());
+        return this;
     }
 }
