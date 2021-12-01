@@ -3,19 +3,21 @@ package common;
 public class Config {
 
     /**
-     * Specify the browser and platform for tests:
+     * Config to specify the browser and platform for tests.
+     * Webdriver logic you can find in CommonActions.class.
+     * Available the following options:
      * CHROME_MAC
      * FIREFOX_MAC
      */
     public static final String BROWSER_AND_PLATFORM = "CHROME_MAC";
 
     /**
-     * Clear browser cookies after each iteration
+     * Config to clear browser cookies after each iteration
      */
     public static final Boolean CLEAR_COOKIES = true;
 
     /**
-     * To keep browser open after all scenario/tests
+     * Config to keep browser open after all scenario/tests
      */
-    public static final Boolean HOLD_BROWSER_OPEN = true;
+    public static final Boolean HOLD_BROWSER_OPEN = false;
 }
