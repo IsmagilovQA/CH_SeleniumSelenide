@@ -1,6 +1,6 @@
 package seleniumLessons;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +23,7 @@ public class PresenceInvisibility {
         WebElement exchangeButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.xpath("//button[@data-qa-node='exchange']")));
         exchangeButton.click();
-        Assert.assertTrue(wait.until(ExpectedConditions.invisibilityOfElementLocated(
+        Assertions.assertTrue(wait.until(ExpectedConditions.invisibilityOfElementLocated(
                 By.xpath("//button[@data-qa-node='exchange']"))));
 
     }

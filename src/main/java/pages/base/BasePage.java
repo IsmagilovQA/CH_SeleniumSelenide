@@ -16,7 +16,7 @@ public class BasePage {
         this.driver = driver;
     }
 
-    By authWidget = By.xpath("//iframe[@src='https://login-widget.privat24.ua/']");
+    private final By authWidget = By.xpath("//iframe[@src='https://login-widget.privat24.ua/']");
 
     /**
      * The method for navigating to specific URL
@@ -37,7 +37,7 @@ public class BasePage {
     }
 
     /**
-     * Check is auth frame is visible
+     * Checks that auth frame is visible
      */
     public void isAuthWidgetPresent() {
         WebElement authFrame = driver.findElement(authWidget);

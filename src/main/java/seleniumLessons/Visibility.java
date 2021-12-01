@@ -1,6 +1,6 @@
 package seleniumLessons;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +27,7 @@ public class Visibility {
 
         WebElement finalBlock = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='awesome']/h1")));
 
-        Assert.assertEquals("Thanks!", finalBlock.getText());
+        Assertions.assertEquals("Thanks!", finalBlock.getText());
 
     }
 }

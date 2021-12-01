@@ -1,6 +1,6 @@
 package seleniumLessons;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,13 +21,13 @@ public class GetAttributes {
         WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@data-qa-node='login']")));
         String textContentAtr = loginBtn.getAttribute("textContent");
         System.out.println(textContentAtr);
-        Assert.assertEquals("Вхід", textContentAtr);
+       Assertions.assertEquals("Вхід", textContentAtr);
 
         driver.navigate().to("https://next.privat24.ua/mobile");
         WebElement amount = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@data-qa-node='amount']")));
         String defaultValue = amount.getAttribute("defaultValue");
         System.out.println(defaultValue);
-        Assert.assertEquals(defaultValue, "50");
+        Assertions.assertEquals(defaultValue, "50");
         driver.quit();
     }
 

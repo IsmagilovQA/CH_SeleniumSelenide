@@ -1,6 +1,7 @@
 package seleniumLessons;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,12 +23,12 @@ public class TitleSourceSwitchToNavigate {
         //Get current URL + assertion
         String currentUrl = driver.getCurrentUrl();
         System.out.println(currentUrl);
-        Assert.assertEquals(currentUrl, "https://www.google.com/?gws_rd=ssl");
+        Assertions.assertEquals(currentUrl, "https://www.google.com/?gws_rd=ssl");
 
         //Get current title + assertion
         String title = driver.getTitle();
         System.out.println(title);
-        Assert.assertEquals(title, "Google");
+        Assertions.assertEquals(title, "Google");
 
         //Get page source
         String pageS = driver.getPageSource();

@@ -1,6 +1,6 @@
 package seleniumLessons;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +29,6 @@ public class DisappearanceStalenessOf {
         WebElement closeBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Close']")));
         closeBtn.click();
 
-        Assert.assertTrue(wait.until(ExpectedConditions.stalenessOf(commentTexArea)));
+        Assertions.assertTrue(wait.until(ExpectedConditions.stalenessOf(commentTexArea)));
     }
 }

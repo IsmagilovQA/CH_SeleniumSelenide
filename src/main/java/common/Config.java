@@ -1,10 +1,10 @@
 package common;
 
 public class Config {
-
     /**
      * Config to specify the browser and platform for tests.
      * Webdriver logic you can find in CommonActions.class.
+     *
      * Available the following options:
      * CHROME_MAC
      * FIREFOX_MAC

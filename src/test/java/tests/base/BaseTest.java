@@ -27,7 +27,7 @@ public class BaseTest {
 
 
     @AfterEach
-    void clearCookiesAndLocalStorage() {
+    public void clearCookiesAndLocalStorage() {
         if (CLEAR_COOKIES) {
             JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
             driver.manage().deleteAllCookies();
@@ -37,7 +37,7 @@ public class BaseTest {
 
 
     @AfterAll
-    void close() {
+    public void close() {
         if (!HOLD_BROWSER_OPEN) {
             driver.quit();
         }
