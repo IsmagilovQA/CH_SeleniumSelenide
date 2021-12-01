@@ -9,12 +9,17 @@ import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pages.base.BasePage;
 import pages.loans.CarLoansPage;
 import pages.telecomunications.MobilePhoneReplenishmentPage;
 
-import static common.Config.CLEAR_COOKIES;
-import static common.Config.HOLD_BROWSER_OPEN;
+import java.io.File;
+import java.time.LocalTime;
+import java.util.Objects;
+
+import static common.Config.*;
 
 
 //@Execution(ExecutionMode.CONCURRENT) //  Looks it's not needed. All configs see in junit-platform.properties. Run in parallel -> uncomment this line.
@@ -26,6 +31,24 @@ public class BaseTest {
     protected BasePage basePage = new BasePage(driver);
     protected CarLoansPage carLoansPage = new CarLoansPage(driver);
     protected MobilePhoneReplenishmentPage mobilePhoneReplenishmentPage = new MobilePhoneReplenishmentPage(driver);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseTest.class);
+
+
+    /** Cleaning allure results and screenshots from previous builds */
+    static {
+        LOGGER.info("START TIME:" + LocalTime.now());
+        LOGGER.info("Start clear reports dir: build/reports...");
+        File allureResults = new File("allure-results");
+        if(allureResults.isDirectory()) {
+            for (File item : Objects.requireNonNull(allureResults.listFiles()))
+                item.delete();
+        }
+        if(CLEAR_REPORTS_DIR) {
+            File allureScreenshots = new File("build/reports/tests");
+            for (File item : Objects.requireNonNull(allureScreenshots.listFiles()))
+                item.delete();
+        }
+    }
 
 
     @AfterEach
