@@ -39,6 +39,4 @@ public class Listener implements TestWatcher {
     public byte[] attachScreenshotToAllure(TakesScreenshot takesScreenshot) {
         return takesScreenshot.getScreenshotAs(OutputType.BYTES);
     }
-
-
 }
